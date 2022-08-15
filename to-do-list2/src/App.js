@@ -25,6 +25,7 @@ const App  = () => {
     const [deleteDivClass, setDeleteDivClass] = useState(`delete-div`);
     const [deletedId, setDeletedId] = useState(``);
     const [searchValue, setSearchValue] = useState(``);
+    const [contentError, setContentError] = useState(`content-error`)
 
     const filterTasks = (el) => {
       if(checkNotComplited) {
@@ -35,7 +36,7 @@ const App  = () => {
     }
 
     const addTask = () => {
-        if(taskRef.current.value) {
+        if(taskRef.current.value && taskRef.current.value.length <= 54) {
           const object = {
             text: taskRef.current.value,
             id: nextId,
@@ -46,7 +47,11 @@ const App  = () => {
           taskRef.current.value = ``
           setInputClass('add-input')
           setPlaceholder('Write here')
-        } else {
+          setContentError(`content-error`)
+        } else if(taskRef.current.value.length > 54) {
+            setContentError(`content-error show-content-error`)
+        }
+        else {
           setInputClass('wrong-input')
           setPlaceholder('Cant add empty task')
         }
@@ -98,7 +103,8 @@ const App  = () => {
         </Card>
 
         <Card className="add-div">
-        <Input placeholder={placeholder} type="text" className={inputClass} myRef={taskRef} />
+        <Input placeholder={placeholder} type="text" className={inputClass} myRef={taskRef} /> <br />
+        <Text className={contentError}>Task content can contain max 54 characters.</Text> <br />
         <Input placeholder="search" className="add-input" type="text" onChange={(event) => setSearchValue(event.target.value)} />
         <Button onClick={addTask} className="add-button">Add</Button>
         </Card>

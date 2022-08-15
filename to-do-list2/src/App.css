@@ -187,11 +187,27 @@ input[type="checkbox"] {
     color: #008594;
 }
 
+.content-error {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 5%;
+    color: red;
+    display: none;
+}
+
+.show-content-error {
+  display: inline-block;
+}
 
 @media screen and (max-width: 320px) {
    html{
       font-size: 6px;
    } 
+
+   .content-error {
+    font-size: 1.75rem;
+   }
     
    .hide{
       width: 50%;
@@ -239,3 +255,4 @@ input[type="checkbox"] {
   }
   
 }
+
