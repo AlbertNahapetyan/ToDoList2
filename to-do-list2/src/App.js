@@ -24,6 +24,7 @@ const App  = () => {
     const [deleteMainDivClass, setDeleteMainDivClass] = useState('main');
     const [deleteDivClass, setDeleteDivClass] = useState(`delete-div`);
     const [deletedId, setDeletedId] = useState(``);
+    const [searchValue, setSearchValue] = useState(``);
 
     const filterTasks = (el) => {
       if(checkNotComplited) {
@@ -77,6 +78,10 @@ const App  = () => {
       setToDoList(modifiedList)
     }
 
+    const searchFilter = (el) => {
+      return el.text.toLowerCase().includes(searchValue.toLowerCase())
+    }
+
     return(
       <Wrapper>
         <Card className={deleteDivClass}>
@@ -94,6 +99,7 @@ const App  = () => {
 
         <Card className="add-div">
         <Input placeholder={placeholder} type="text" className={inputClass} myRef={taskRef} />
+        <Input placeholder="search" className="add-input" type="text" onChange={(event) => setSearchValue(event.target.value)} />
         <Button onClick={addTask} className="add-button">Add</Button>
         </Card>
         
