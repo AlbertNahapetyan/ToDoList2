@@ -1,5 +1,241 @@
+
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+.hide{
+  width: 12%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 67%;
+  margin-top: 10rem;
+  padding: 0.8rem 0px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.checkbox{
+  width: 2rem;
+  height: 2rem;
+}
+.text{
+  margin-left: 1rem;
+}
+
+
+
+.add-div{
+  width: 100%;
+  height: 10vh;
+  margin-top: 7rem;
+}
+
+.add-input {
+  width: 60%;
+  height:70% ;
+  border: 3px solid rgb(255, 196, 0);
+  border-radius: 4px;
+  margin-left: 5%;
+  padding-left: 2rem;
+  outline: yellow;
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+.wrong-input {
+  width: 60%;
+  height:70% ;
+  border: 3px solid rgb(255, 196, 0);
+  border-radius: 4px;
+  margin-left: 5%;
+  padding-left: 2rem;
+  outline: yellow;
+  font-size: 2rem;
+}
+
+.wrong-input::placeholder {
+  color: red;
+}
+
+.add-button {
+  height: 70%;
+  width: 7%;
+  margin-left: 4rem;
+  background-color: #008594;
+  border-color: #008594;
+  color: white;
+  font-size: 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+.list {
+  list-style-type: none;
+  margin-top: 5rem;
+}
+
+
+.list-line{
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+ 
+
+}
+.list-line:hover{
+  background-color: rgb(237, 237, 237);
+}
+
+.list-item {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  padding: 2.5rem 0px ;
+  margin-left: 5%;
+  border-bottom: 1px solid grey;
+  font-size: 2rem;
+  color: rgb(25, 25, 25);
+}
+
+
+.done {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 3rem;
+}
+
+
+.delete {
+  font-size: 3rem;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+  
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+
+.main {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.3;
+  display: none;
+}
+
+
+.main-view{
+  display: block;
+}
+
+.delete-div {
+  width: 27%;
+  height: 25vh;
+  position: absolute;
+  top: calc( 50vh - 12vh);
+  left: calc(50% - 13%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 4px;
+  background-color: white;
+  display: none;
+  z-index: 15;
+}
+
+
+.delete-div2 {
+  display: flex;
+}
+
+
+
+.accept-delete{
+  padding: 8px 40px;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  color: #034e56;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+
+.delete-div  button {
+  margin-top: 3rem;
+}
+
+.delete-div  span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #008594;
+}
+
+
+@media screen and (max-width: 320px) {
+   html{
+      font-size: 6px;
+   } 
+    
+   .hide{
+      width: 50%;
+      margin-left: 50%;
+   }
+
+   .add-div{
+      display: flex;
+      flex-direction: column;
+   }
+
+   .add-input {
+      margin-top: 0.5rem;
+      width: 90%;
+   }
+
+   .wrong-input{
+      width: 90%;
+   }
+   .add-button{
+      width: 20%;
+      margin-top: 1rem;
+      margin-left: 75%;
+  }
+
+   .list-item {
+      width: 90%;
+   }
+   
+  .done{
+      margin-right: 1.5rem;
+  }
+  
+
+
+  .main{
+      width: 80%;
+      height: 20vh;
+      left: 10%;
+      
+  }
+
+  .accept-delete{
+      padding: 1rem 2rem;
+  }
+  
 }
